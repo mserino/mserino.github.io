@@ -48,12 +48,20 @@ table {
 @font-face {
   font-family: 'Rosetta-Icons';
   src: url("./../fonts/rosetta-icons-Regular.woff") format("woff"); }
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+
 .global-nav {
   height: 46px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   position: relative;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  color: #66757f;
+  font-size: 13px;
+  font-weight: 500; }
+  .global-nav-inner {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
   .global-nav__container {
     max-width: 1190px;
     height: 46px;
@@ -64,8 +72,37 @@ table {
   float: left;
   width: 40%;
   text-align: left; }
-  .left-nav li {
-    display: inline-block; }
+  .left-nav__item {
+    display: inline-block;
+    height: 46px;
+    overflow: hidden; }
+  .left-nav__link {
+    padding: 0 15px;
+    transition: all .15s ease-in-out;
+    display: block;
+    cursor: pointer;
+    height: 46px;
+    border-bottom: 5px solid #1da1f2; }
+    .left-nav__link:hover {
+      color: #1da1f2;
+      transition: all .15s ease-in-out;
+      height: 43px; }
+  .left-nav__text {
+    display: inline-block;
+    padding-top: 17px; }
+  .left-nav .icon:before {
+    font-family: 'Rosetta-Icons';
+    font-size: 21px;
+    position: relative;
+    top: 5px; }
+  .left-nav .icon--home:before {
+    content: '\F053'; }
+  .left-nav .icon--moments:before {
+    content: '\F089'; }
+  .left-nav .icon--messages:before {
+    content: '\F054'; }
+  .left-nav .icon--notifications:before {
+    content: '\F055'; }
 
 .right-nav {
   display: inline-block;
@@ -81,10 +118,10 @@ table {
   position: relative; }
   .logo:before {
     content: '\F179';
-    font-family: 'Rosetta-Icons';
     font-size: 21px;
     margin-top: 10px;
     position: absolute;
-    color: #1da1f2; }
+    color: #1da1f2;
+    font-family: 'Rosetta-Icons'; }
 
 /*# sourceMappingURL=styles.css.map */

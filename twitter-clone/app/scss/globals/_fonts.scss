@@ -2,3 +2,11 @@
   font-family: 'Rosetta-Icons';
   src: url('./../fonts/rosetta-icons-Regular.woff') format('woff');
 }
+
+@mixin fontHelveticaNeue() {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+@mixin fontRosettaIcons() {
+	font-family: 'Rosetta-Icons';
+}

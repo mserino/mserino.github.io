@@ -4,6 +4,13 @@
 	position: relative;
 	width: 100%;
 	text-align: center;
+	color: $header-darkgrey;
+	font-size: 13px;
+	@include typographyBold;
+
+	&-inner {
+		border-bottom: 1px solid rgba(0,0,0,0.05)
+	}
 
 	&__container {
 		max-width: 1190px;
@@ -17,8 +24,55 @@
 	float: left;
 	width: 40%;
 	text-align: left;
-	& li {
+	&__item {
 		display: inline-block;
+		height: 46px;
+		overflow: hidden;
+	}
+	&__link {
+		padding: 0 15px;
+		transition: all .15s ease-in-out;
+		display: block;
+		cursor: pointer;
+		height: 46px;
+		border-bottom: 5px solid $twitter-lightblue;
+		&:hover {
+			color: $twitter-lightblue;
+			transition: all .15s ease-in-out;
+			height: 43px;
+		}
+	}
+	&__text {
+		display: inline-block;
+		padding-top: 17px;
+	}
+	.icon {
+		&:before {
+			@include fontRosettaIcons;
+			font-size: 21px;
+			position: relative;
+			top: 5px;
+		}
+		&--home {
+			&:before {
+				content: '\F053';
+			}
+		}
+		&--moments {
+			&:before {
+				content: '\F089';
+			}
+		}
+		&--messages {
+			&:before {
+				content: '\F054';
+			}
+		}
+		&--notifications {
+			&:before {
+				content: '\F055';
+			}
+		}
 	}
 }
 
@@ -38,10 +92,10 @@
 	position: relative;
 	&:before {
 		content: '\F179';
-		font-family: 'Rosetta-Icons';
 		font-size: 21px;
 		margin-top: 10px;
 		position: absolute;
 		color: $twitter-lightblue;
+		@include fontRosettaIcons;
 	}
 }
