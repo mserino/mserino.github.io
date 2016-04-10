@@ -1,0 +1,47 @@
+.global-nav {
+	height: 46px;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+	position: relative;
+	width: 100%;
+	text-align: center;
+
+	&__container {
+		max-width: 1190px;
+		height: 46px;
+		margin: 0 auto;
+	}
+}
+
+.left-nav {
+	display: inline-block;
+	float: left;
+	width: 40%;
+	text-align: left;
+	& li {
+		display: inline-block;
+	}
+}
+
+.right-nav {
+	display: inline-block;
+	float: right;
+	width: 40%;
+	text-align: right;
+	& li {
+		display: inline-block;
+	}
+}
+
+.logo {
+	width: 20%;
+	float: left;
+	position: relative;
+	&:before {
+		content: '\F179';
+		font-family: 'Rosetta-Icons';
+		font-size: 21px;
+		margin-top: 10px;
+		position: absolute;
+		color: $twitter-lightblue;
+	}
+}
