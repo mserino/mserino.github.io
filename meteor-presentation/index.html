@@ -184,7 +184,7 @@
 						<h3>Installing Atmosphere Packages</h3>
 						<p>
 							<pre>
-				   $ meteor add package
+				   $ meteor add &lt;package-name&gt;
 							</pre>
 						</p>
 						<h3>Using Atmosphere Packages <span class="new-feature">(v1.3)</span></h3>
@@ -204,7 +204,7 @@
 						<h3>Installing NPM Packages</h3>
 						<p>
 							<pre>
-			     $ meteor npm install --save package
+			     $ meteor npm install --save &lt;package-name&gt;
 							</pre>
 						</p>
 						<h3>Using NPM Packages</h3>
@@ -271,9 +271,19 @@
 						</p>
 						<p class="fragment">
 							<pre>
-				Meteor.publish('books', function() {
-					return Books.find();
-				});
+		Meteor.publish('books', function() {
+		  return Books.find();
+		});
+							</pre>
+						</p>
+						<p class="fragment">
+							<pre>
+		Meteor.publish('userData', function() {
+		  return Meteor.users.find({},
+		    {fields:
+		      {'_id': 1, 'username': 1, 'borrowing': 1, 'requesting': 1, 'wishlist': 1}
+		    });
+		});
 							</pre>
 						</p>
 					</section>
