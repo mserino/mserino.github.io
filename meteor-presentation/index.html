@@ -46,7 +46,9 @@
                     <img src="images/lunch-n-learn.jpg" alt="" class="pc100" />
                 </section>
 				<section>
-					<h1>Meteor.js</h1>
+					<div>
+						<img src="http://blog.thesecretlab.nl/wp-content/uploads/2015/07/meteor-logo.png" class="dd-image"/>
+					</div>
 					<p>
 						<small>Maggie Serino<br/>
 						<a href="http://github.com/mserino">http://github.com/mserino</a><br/>
@@ -56,24 +58,423 @@
 				</section>
 
 				<section>
+					<section>
+						<h1>Why?</h1>
+					</section>
+					<section>
+						<img src="http://nerdapproved.com/wp-content/uploads/2016/02/how-I-spend-money.jpg" class="dd-full-image"/>
+					</section>
+				</section>
+
+				<section>
 					<h2>What is Meteor?</h2>
 					<p>
 						Full-stack Javascript platform for developing modern web and mobile applications.
 					</p>
-					<ul id="fragments">
+					<ul id="fragments" class="small">
 						<li class="fragment">
-							Allows you to develop in <span class="highlight">one language</span>, Javascript, in all environments.
+							Allows you to develop in <span class="highlight">one language</span>, Javascript.
 						</li>
 						<li class="fragment">
-							Uses <span class="highlight">data on the wire</span>, meaning the server sends data, not HTML, and the client renders it.
+							Uses <span class="highlight">data on the wire</span>.
 						</li>
 						<li class="fragment">
-							<span class="highlight">Embraces the ecosystem</span>, bringing the best parts of the extremely active Javascript community to you in a careful and considered way.
+							<span class="highlight">Embraces the ecosystem</span>.
 						</li>
 						<li class="fragment">
-							Provides <span class="highlight">full stack reactivity</span>
+							<span class="highlight">Full stack reactivity</span>.
 						</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Version 1.3</h2>
+					<p>
+						Released in March 2016
+					</p>
+					<p class="small">
+						New features from 1.3 will be displayed with <span class="new-feature">(v1.3)</span>
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Structure</h2>
+					</section>
+					<section>
+						<h3>Universal Javascript</h3>
+						<ul class="small">
+							<li>
+								<p>
+									ES2015 modules <span class="new-feature">(v1.3)</span>
+								</p>
+								<p class="small">Replacement for CommonJS and AMD</p>
+							</li>
+							<li>
+								Introduction to using <code>import</code> and <code>export</code> <span class="new-feature">(v1.3)</span>
+							</li>
+							<li>
+								Importing from packages <span class="new-feature">(v1.3)</span>
+							</li>
+							<li>
+								Using <code>require</code> <span class="new-feature">(v1.3)</span>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>File structure <span class="new-feature">(v1.3)</span></h2>
+						<pre>
+		          imports/
+			      ├── startup/
+			      |     ├── client/
+			      |     |     ├── index.js
+			      |     |     ├── routes.js
+			      |     |     └── useraccounts-configuration.js
+			      |     ├── server/
+			      |     |     ├── fixtures.js
+			      |     |     └── index.js
+			      ├── api/
+			      |     ├── lists/
+			      |     |     ├── server/
+			      |     |     |     ├── publications.js
+			      |     |     |     └── publications.tests.js
+			      |     |     ├── lists.js
+			      |     |     ├── lists.tests.js
+			      |     |     ├── methods.js
+			      |     |     └── methods.tests.js
+			      ├── ui/
+			      |     ├── components/
+			      |     ├── layouts/
+			      |     └── pages/
+			      ├── client/
+			      |     └── main.js
+			      └── server/
+			            └── main.js
+						</pre>
+					</section>
+					<section>
+						<h3>Default file load order</h3>
+						<ul class="small">
+							<li>HTML template files are <span class="highlight">always</span> loaded before everything else</li>
+							<li>Files beginning with <code>main.</code> are loaded <span class="highlight">last</span></li>
+							<li>Files inside <span class="highlight">any</span> <code>lib</code> directory are loaded next</li>
+							<li>Files with deeper paths are loaded next</li>
+							<li>Files are then loaded in alphabetical order of the entire path</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Build</h2>
+					</section>
+					<section>
+						<h2>Atmosphere Packages</h2>
+						<p>
+							Written specifically for Meteor
+						</p>
+						<ul class="small">
+							<li class="highlight">http://atmospherejs.com</li>
+							<li><code>$ meteor search</code></li>
+							<li>Fastosphere</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Installing Atmosphere Packages</h3>
+						<p>
+							<pre>
+				   $ meteor add package
+							</pre>
+						</p>
+						<h3>Using Atmosphere Packages <span class="new-feature">(v1.3)</span></h3>
+						<p>
+							<pre>
+		import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+							</pre>
+						</p>
+					</section>
+					<section>
+						<h2>Npm Packages</h2>
+						<p>
+							From <span class="new-feature">version 1.3</span> seamless integration with NPM
+						</p>
+					</section>
+					<section>
+						<h3>Installing NPM Packages</h3>
+						<p>
+							<pre>
+			     $ meteor npm install --save package
+							</pre>
+						</p>
+						<h3>Using NPM Packages</h3>
+						<p>
+							<pre>
+			     import moment from 'moment';
+
+			     const moment = require('moment');
+							</pre>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Collections and Schemas</h2>
+					</section>
+					<section>
+						<div><img src="https://www.mongodb.org/static/images/mongodb-logo.png" class="dd-image"/></div>
+						<div>
+							A set of related data in MongoDB is referred to as a <span class="highlight">Collection</span>
+						</div>
+					</section>
+					<section>
+						<div class="fragment">
+							<h3>Server-side Collection</h3>
+							<code>Todos = new Mongo.Collection('Todos');</code>
+						</div>
+						<div class="fragment">
+							<h3>Client-side Collection</h3>
+							<code>Todos = new Mongo.Collection('Todos');</code>
+						</div>
+						<div class="fragment small">
+							<p>
+								On client there is no direct connection to the MongoDB database.
+							</p>
+							<p>
+								A Collection is a client side <i>cache</i> of the database.
+							</p>
+							<p>
+								<spam class="highlight">Minimongo</spam> library is an in-memory, Javascript implementation of the MongoDB API.
+							</p>
+						</div>
+					</section>
+					<section>
+						<h2>Schemas</h2>
+						<p class="small">
+							To validate the contents of your collection to conform to a known format.
+						</p>
+						<p>
+							<code>aldeed:simple-schema</code>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Publications and Data Loading</h2>
+					</section>
+					<section>
+						<h3>Publications</h3>
+						<p>
+							Named API on the server that constructs a set of data to send to a client.
+						</p>
+						<p class="fragment">
+							<pre>
+				Meteor.publish('books', function() {
+					return Books.find();
+				});
+							</pre>
+						</p>
+					</section>
+					<section>
+						<h3>Subscriptions</h3>
+						<p>
+							Connects to a publication and receives data
+						</p>
+						<code>Meteor.subscribe('books');</code>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Methods</h2>
+						<p>
+							Calls used to save user input events and data that come from the client.
+						</p>
+					</section>
+					<section>
+						<h3>Defining a Method</h3>
+						<pre>
+			Meteor.methods({
+			  addBook: function(book) {
+			    Books.insert(book);
+			  },
+			  updateBook: function(book) {
+			    Books.update(book, {$set: {title: 'Harry Potter'});
+			  },
+			  deleteBook: function(book) {
+			    Books.remove({_id: book._id});
+			  }
+			});
+						</pre>
+					</section>
+					<section>
+						<h3>Calling a Method</h3>
+						<pre>
+			Meteor.call('addBook', book, function(error, result) {
+			  if (error) {
+			    FlashMessages.sendError(error.reason, { autoHide: false });
+			  } else {
+			    Router.go('bookPage', {_id: result._id});
+			  }
+			});
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>User Interfaces</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Blaze</li>
+							<li>React <span class="new-feature">(v1.3)</span></li>
+							<li>Angular <span class="new-feature">(v1.3)</span></li>
+						</ul>
+					</section>
+					<section>
+						<div class="fragment">
+							<h3>Reusable</h3>
+							<p class="small">
+								Does not rely on anything from the environment it renders in
+							</p>
+						</div>
+						<div class="fragment">
+							<h3>Smart</h3>
+							<ul class="small">
+								<li>Can subscribe to data</li>
+								<li>Can fetch data from subscriptions</li>
+								<li>Can fetch global client-side state from stores</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<pre>
+				&lt;template name="booksList"&gt;
+				  {{#each book in books}}
+				    &lt;p&gt;{{title}}&lt;/p&gt;
+				    &lt;p&gt;{{author}}&lt;/p&gt;
+				  {{/each}}
+				&lt;/template&gt;
+							</pre>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Security</h2>
+					</section>
+					<section>
+						<div class="fragment">
+							<h3>Validate Methods</h3>
+							<p>
+								If you don't properly secure the Methods, users can edit other people's documents or data.
+							</p>
+						</div>
+						<div class="fragment">
+							<h3>Limit data published from Publications</h3>
+							<p>
+								Need to do security at the data level to make sure data is not sent in the first place.
+							</p>
+						</div>
+						<div class="fragment">
+							<h3>Serving files</h3>
+							<p>
+								Secret business logic in your app should be located in code that is only loaded on the server
+							</p>
+						</div>
+						<div class="fragment">
+							<h3>Remove dev packages</h3>
+							<p class="small">
+								remove <code>autopublish</code> and <code>insecure</code>
+							</p>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h2>Deployment</h2>
+					<ul class="small">
+						<li>Galaxy</li>
+						<li>Meteor Up</li>
+						<li>Custom</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Learning Resources</h2>
+					<ul class="small">
+						<li>
+							<p>Meteor Official Guide</p>
+							<p class="highlight">
+								http://guide.meteor.com/
+							</p>
+						</li>
+						<li>
+							<p>
+								Discover Meteor
+							</p>
+							<p class="highlight">
+								https://www.discovermeteor.com/
+							</p>
+						</li>
+						<li>
+							<p>
+								Crater.io
+							</p>
+							<p class="highlight">
+								https://crater.io/
+							</p>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Showtime</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>The Bookley Crossing</h2>
+						<p class="small">
+							www.bookleycrossing.co.uk
+						</p>
+						<img src="images/imac-bookley.png" class="dd-image"/>
+					</section>
+					<section>
+						<h3>Features</h3>
+						<ul>
+							<li>Meteor 1.2</li>
+							<li>Responsive</li>
+							<li>Twitter Bootstrap</li>
+							<li>Work in Progress...</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Digital Maturity</h2>
+						<p class="small">
+							http://digitalmaturity.deloittedigital.com
+						</p>
+						<img src="images/imac-digitalmaturity.png" class="dd-image"/>
+					</section>
+					<section>
+						<h3>Features</h3>
+						<ul>
+							<li>Meteor 1.2</li>
+							<li>Responsive</li>
+							<li>IE9+ support</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Thank you</h2>
+					<img src="http://emojipedia-us.s3.amazonaws.com/cache/12/ca/12ca8ff8e4a8df6e64d90513624481c3.png" class="dd-image"/>
 				</section>
 
 				<!-- <section id="fragments">
